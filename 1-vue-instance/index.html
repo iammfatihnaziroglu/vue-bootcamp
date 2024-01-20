@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Instance</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>  {{title}}  </h1>
+        <p> {{content}} </p>
+        <a 
+        :href="github.url" 
+        :alt="github.alt" 
+        v-bind:target="github.target" 
+        v-bind:mfatih="owner"
+        >  
+        {{github.title}}  </a>
+        </br>
+    <br/>
+     <button v-on:click="changeTitle('Bu 1. button')" >Title Değiştir 1...</button>
+     <button v-on:click="changeTitle('Bu 2. button')" >Title Değiştir 2...</button>
+       <hr/>
+       <br/>
+      <div 
+        @mousemove="updateCoords('mouseMooove', $event)" 
+         class="box" 
+         @click="changeTitle('Box üzerinden title değiştirme.')"
+        >
+      </div>
+        <span> {{coords.x}},{{coords.y}} </span>
+    </div>
+     <script src="app.js"></script>
+</body>
+</html>
