@@ -1,5 +1,12 @@
 {
-    "users": [],
-    "bookmarks": [],
-    "categories": []
+  "users": [
+    {
+      "id": "65cc",
+      "fullname": "Mehmet Fatih",
+      "username": "m.fatih",
+      "password": "84fd39ce1f76687ef5d82b372c7dc11ce5cb72d7"
+    }
+  ],
+  "bookmarks": [],
+  "categories": []
 }
