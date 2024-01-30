@@ -35,18 +35,22 @@
           New
         </router-link>
         <div class="relative group">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            viewBox="0 0 24 24"
-            class="fill-current"
-            width="24"
+          <button
+            class="w-8 h-8 flex items-center justify-center rounded-md transition-colors duration-500 hover:bg-gray-200 group-focus-within:bg-gray-300"
           >
-            <path d="M0 0h24v24H0V0z" fill="none" />
-            <path
-              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-            />
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+              width="24"
+            >
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path
+                d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+          </button>
           <nav
             class="bg-white !z-10 rounded-md shadow-md p-2 w-56 flex flex-col absolute group-focus-within:visible top-full right-0 invisible"
           >
@@ -80,7 +84,7 @@
               </svg>
               Favorites
             </a>
-            <a href="#" class="menu-item">
+            <a @click="onLogout" href="#" class="menu-item">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 enable-background="new 0 0 24 24"
@@ -109,10 +113,16 @@
 
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
 export default {
-  computed:{
+  computed: {
     ...mapGetters(["_isAuthenticated"])
+  },
+  methods: {
+    onLogout() {
+      this.$store.commit("logoutUser");
+      this.$router.push({ name: "LoginPage" });
+    }
   }
-}
+};
 </script>
