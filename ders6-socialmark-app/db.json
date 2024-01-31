@@ -11,6 +11,12 @@
       "fullname": "Seher Karahan",
       "username": "seherkrhn",
       "password": "4cd4ae717ea8a383d8d1a6264a88949cc5bbeeef"
+    },
+    {
+      "id": "67c9",
+      "fullname": "Nesrin Köksal",
+      "username": "nesrinköksal",
+      "password": "19f5dd55d51bf0a66bf170ef84e1d1d941b92278"
     }
   ],
   "bookmarks": [
@@ -49,6 +55,33 @@
       "description": "Flutter Ios ile Android i bir arada yazmanıza olanak sağlar.",
       "userId": "df33",
       "createdAt": "2024-01-31T09:24:42.461Z"
+    },
+    {
+      "id": "1d3b",
+      "title": "AWS Learning Course",
+      "url": "https://www.aws.com",
+      "categoryId": "4",
+      "description": "AWS Learning Course it is free !",
+      "createdAt": "2024-01-31T17:16:41.170Z",
+      "userId": "67c9"
+    },
+    {
+      "id": "fbaf",
+      "title": "Github Profile",
+      "url": "https://www.github.com/iammfatihnaziroglu",
+      "categoryId": "1",
+      "description": "Mehmet Fatih Github profile.",
+      "createdAt": "2024-01-31T17:22:40.804Z",
+      "userId": "65cc"
+    },
+    {
+      "id": "17d5",
+      "title": "Linkedin Profile",
+      "url": "https://www.linkedin.com/in/iammfatihnaziroglu",
+      "categoryId": "6",
+      "description": "Here is my Linkedin Profile",
+      "createdAt": "2024-01-31T17:23:49.145Z",
+      "userId": "65cc"
     }
   ],
   "categories": [
