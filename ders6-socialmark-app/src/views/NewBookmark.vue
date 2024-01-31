@@ -36,7 +36,8 @@ export default {
         title: null,
         url: null,
         categoryId: null,
-        description: null
+        description: null,
+        createdAt: null
       }
     };
   },
@@ -65,8 +66,9 @@ export default {
       const saveData = {
         ...this.userData,
         userId: this._getCurrentUser?.id,
-        created_at: new Date()
+        createdAt: new Date()
       };
+
       this.$appAxios.post("/bookmarks", saveData).then(save_bookmark_response => {
         console.log("save_bookmark_response ==>", save_bookmark_response);
         Object.keys(this.userData)?.forEach(field => this.userData[field] = null )

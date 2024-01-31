@@ -50,20 +50,16 @@
                 d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17l-.59.59-.58.58V4h16v12zM6 12h2v2H6zm0-3h2v2H6zm0-3h2v2H6zm4 6h5v2h-5zm0-3h8v2h-8zm0-3h8v2h-8z"
               />
             </svg>
-            <p
-              class="details-container "
-            >
-            {{ item.description }}
-            </p>
+            <p class="details-container">{{ item.description }}</p>
           </button>
         </div>
       </div>
       <div class="text-xs text-gray-400 mt-2 flex justify-between">
         <a href="#" class="hover:text-black">{{userName}}</a>
-        <span>{{item.created_at}}</span>
+        <span>{{createdDate}}</span>
       </div>
     </div>
-    <div class="bg-red-200 p-1 text-red-900 text-center text-sm"> {{ categoryName }} </div>
+    <div class="bg-red-200 p-1 text-red-900 text-center text-sm">{{ categoryName }}</div>
   </div>
 </template>
 
@@ -75,14 +71,28 @@ export default {
       type: Object,
       required: true,
       default: () => {}
-    },
+    }
   },
-  computed:{
-    categoryName(){
+  computed: {
+    categoryName() {
       return this.item?.category?.name || "-";
     },
-    userName(){
+    userName() {
       return this.item?.user?.fullname || "-";
+    },
+    createdDate() {
+      if (this.item.createdAt) {
+        const dateObject = new Date(this.item.createdAt);
+        return new Intl.DateTimeFormat("tr-TR", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+         // hour: "numeric",
+         // minute: "numeric"
+        }).format(dateObject);
+      } else {
+        return "-";
+      }
     }
   }
 };

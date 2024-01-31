@@ -5,6 +5,12 @@
       "fullname": "Mehmet Fatih",
       "username": "m.fatih",
       "password": "84fd39ce1f76687ef5d82b372c7dc11ce5cb72d7"
+    },
+    {
+      "id": "df33",
+      "fullname": "Seher Karahan",
+      "username": "seherkrhn",
+      "password": "4cd4ae717ea8a383d8d1a6264a88949cc5bbeeef"
     }
   ],
   "bookmarks": [
@@ -15,7 +21,7 @@
       "categoryId": "1",
       "description": "Vue3 framework cool!",
       "userId": "65cc",
-      "created_at": "2024-01-30T13:10:30.151Z"
+      "createdAt": "2024-01-30T13:10:30.151Z"
     },
     {
       "id": "d29e",
@@ -24,7 +30,7 @@
       "categoryId": "1",
       "description": "New framework for frontend devs.",
       "userId": "65cc",
-      "created_at": "2024-01-30T13:41:15.566Z"
+      "createdAt": "2024-01-30T13:41:15.566Z"
     },
     {
       "id": "9b65",
@@ -33,7 +39,16 @@
       "categoryId": "6",
       "description": "Three js virtual and game development",
       "userId": "65cc",
-      "created_at": "2024-01-30T15:05:02.515Z"
+      "createdAt": "2024-01-30T15:05:02.515Z"
+    },
+    {
+      "id": "ffb1",
+      "title": "Ios-Android Bir Arada",
+      "url": "https://www.flutter.com",
+      "categoryId": "5",
+      "description": "Flutter Ios ile Android i bir arada yazmanıza olanak sağlar.",
+      "userId": "df33",
+      "createdAt": "2024-01-31T09:24:42.461Z"
     }
   ],
   "categories": [
