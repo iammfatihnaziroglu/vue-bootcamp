@@ -29,7 +29,7 @@ const router = createRouter({
   history: createWebHashHistory(),
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
   const authRequiredRoutes = ["HomePage"];
   const authNotRequiredRoutes = ["LoginPage", "RegisterPage"]
   const _isAuthenticated = store.getters._isAuthenticated;

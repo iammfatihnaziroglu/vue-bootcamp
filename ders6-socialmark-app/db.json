@@ -7,6 +7,59 @@
       "password": "84fd39ce1f76687ef5d82b372c7dc11ce5cb72d7"
     }
   ],
-  "bookmarks": [],
-  "categories": []
+  "bookmarks": [
+    {
+      "id": "45a5",
+      "title": "Vue3 is The Best Framework Ever?",
+      "url": "https://vue3.documentation.com",
+      "categoryId": "1",
+      "description": "Vue3 framework cool!",
+      "userId": "65cc",
+      "created_at": "2024-01-30T13:10:30.151Z"
+    },
+    {
+      "id": "d29e",
+      "title": "Framework for Frontend 'React'",
+      "url": "https://www.reactileyoladevam.net",
+      "categoryId": "1",
+      "description": "New framework for frontend devs.",
+      "userId": "65cc",
+      "created_at": "2024-01-30T13:41:15.566Z"
+    },
+    {
+      "id": "9b65",
+      "title": "Three Js and Games",
+      "url": "https://threejs.co",
+      "categoryId": "6",
+      "description": "Three js virtual and game development",
+      "userId": "65cc",
+      "created_at": "2024-01-30T15:05:02.515Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Frontend"
+    },
+    {
+      "id": "2",
+      "name": "Backend"
+    },
+    {
+      "id": "3",
+      "name": "Android"
+    },
+    {
+      "id": "4",
+      "name": "Cloud"
+    },
+    {
+      "id": "5",
+      "name": "Flutter"
+    },
+    {
+      "id": "6",
+      "name": "Virtual/Game"
+    }
+  ]
 }

@@ -646,7 +646,6 @@ video {
   justify-content: center;
   border-radius: 0.375rem;
   padding: 0.5rem;
-  overflow: hidden;
 }
 
 .details-btn:hover {
@@ -675,11 +674,13 @@ video {
 .details-container {
   visibility: hidden;
   position: absolute;
-  right: 0px;
+  right: -1rem;
   top: 100%;
-  z-index: 10 !important;
-  height: 10rem;
-  width: 15rem;
+  z-index: 10px !important;
+  width: 12rem;
+  max-height: 10rem;
+  white-space: pre-line;
+  overflow-x: scroll;
   overflow-y: scroll;
   border-radius: 0.375rem;
   border-width: 1px;
@@ -693,10 +694,7 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.group:focus-within .details-container {
-  visibility: visible;
-}
-
+.group:focus-within .details-container,
 .group:hover .details-container {
   visibility: visible;
 }
@@ -892,12 +890,32 @@ video {
   margin-left: auto;
 }
 
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .mb-3 {
@@ -976,6 +994,10 @@ video {
   flex-shrink: 0;
 }
 
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .grid-cols-8 {
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
@@ -987,24 +1009,6 @@ video {
 .flex-col {
   flex-direction: column;
 }
-
-.flex-container {
-  display: grid;
-  grid-template-rows: repeat(auto-fill, minmax(150px, 1fr)); /* Otomatik olarak sütunları belirle, minimum 150px genişlik, maksimum 1fr (eşit paylaşım) */
-  gap: 4px; /* Sütunlar arası boşluk */
-}
-
-.grid-item {
-  
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: ;
-}
-
 
 .items-center {
   align-items: center;
@@ -1133,14 +1137,6 @@ video {
   text-align: center;
 }
 
-.text-start {
-  text-align: start;
-}
-
-.text-end {
-  text-align: end;
-}
-
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1168,11 +1164,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
-}
-
-.text-cancel {
-  --tw-text-opacity: 1;
-  color: rgb(79, 106, 79) ;
 }
 
 .text-gray-600 {
@@ -1235,26 +1226,6 @@ video {
   color: rgba(0, 0, 0, var(--tw-text-opacity));
 }
 
-.hover\:text-blue:hover {
-  --tw-text-opacity: 1;
-  color: blue;
-}
-
-.hover\:text-green:hover {
-  --tw-text-opacity: 1;
-  color: green;
-}
-
-.hover\:text-cancel:hover {
-  --tw-text-opacity: 1;
-  color: #9ca3af ;
-}
-
-.hover\:text-gray:hover {
-  --tw-text-opacity: 1;
-  color: gray;
-}
-
 .group:focus-within .group-focus-within\:visible {
   visibility: visible;
 }
@@ -1307,3 +1278,73 @@ video {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 }
+
+
+      /* ekstralar */
+
+      .text-left {
+        text-align: left;
+      }
+      
+      .text-center {
+        text-align: center;
+      }
+      
+      .text-start {
+        text-align: start;
+      }
+      
+      .text-end {
+        text-align: end;
+      }
+    
+      .text-cancel {
+        --tw-text-opacity: 1;
+        color: rgb(79, 106, 79) ;
+      }
+    
+      .hover\:text-blue:hover {
+        --tw-text-opacity: 1;
+        color: blue;
+      }
+      
+      .hover\:text-green:hover {
+        --tw-text-opacity: 1;
+        color: green;
+      }
+      
+      .hover\:text-cancel:hover {
+        --tw-text-opacity: 1;
+        color: #9ca3af ;
+      }
+      
+      .hover\:text-gray:hover {
+        --tw-text-opacity: 1;
+        color: gray;
+      }
+      
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap; /* Yeni satıra geçmesi gereken kutuları sıralar */
+        
+      }
+      
+      /* Kutu içindeki metni gizle ve fazla olan kısmı ... ile göster */
+      .box-content {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      
+      /* Kutu içindeki metni gizle ve fazla olan kısmı ... ile göster */
+      .truncate-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      
+      /* Fare üzerine gelindiğinde tam metni göster */
+      .truncate-text:hover {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+      }
