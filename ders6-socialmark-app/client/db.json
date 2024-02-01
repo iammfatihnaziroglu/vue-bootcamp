@@ -19,6 +19,25 @@
       "password": "19f5dd55d51bf0a66bf170ef84e1d1d941b92278"
     }
   ],
+  "user_likes": [
+    {
+      "userId": "df33",
+      "bookmarkId": 1,
+      "id": "1"
+    },
+    {
+      "id": "1c69",
+      "userId": "65cc",
+      "bookmarkId": "9b65"
+    }
+  ],
+  "user_bookmarks": [
+    {
+      "userId": "67c9",
+      "bookmarkId": 6,
+      "id": "4"
+    }
+  ],
   "bookmarks": [
     {
       "id": "45a5",
