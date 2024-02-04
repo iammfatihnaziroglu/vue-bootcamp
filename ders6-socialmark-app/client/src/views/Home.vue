@@ -3,7 +3,9 @@
   <div class="flex flex-row">
     <Sidebar @category-changed="updateBookmarkList" />
     <AppBookmarkList v-if="bookmarkList.length > 0" :items="bookmarkList" />
-      <div v-else>No Bookmark Available</div>
+      <div v-else>
+        Not already Bookmark yet!
+      </div>
   </div>
 </template>
 
@@ -12,41 +14,23 @@
 import Sidebar from "@/components/Home/Sidebar.vue";
 
 export default {
-  components: {
-    Sidebar
-  },
   data() {
     return {
       bookmarkList: []
     };
   },
-  mounted() {
-    this.$socket.on("NEW_BOOKMARK_ADDED", bookmark => {
-      this.bookmarkList.push(bookmark);
-    });
+  components: {
+    Sidebar
   },
   created() {
-    this.fetchData();
+    this.$appAxios.get("/bookmarks?_embed=category&_embed=user").then(bookmark_list_response => {
+      console.log("bookmark_list_response ==>", bookmark_list_response);
+      this.bookmarkList = bookmark_list_response?.data || [];
+    });
   },
   methods: {
-    fetchData() {
-      this.$appAxios.get("/bookmarks?embed=category&embed=user").then(bookmark_list_response => {
-        console.log("bookmark_list_response :>> ", bookmark_list_response);
-        this.bookmarkList = bookmark_list_response?.data || [];
-      });
-      //! Bookmark olarak eklediklerimizi çekmek için user_bookmarks üzerinden çekelim..
-      this.$appAxios.get("/user_bookmarks/?embed=bookmark&embed=user").then(user_bookmark_response => {
-        console.log("user_bookmark_response :>> ", user_bookmark_response);
-        this.$store.commit("setBookmarks", user_bookmark_response?.data);
-      });
-
-      //! Like olarak eklediklerimizi çekmek için user_likes üzerinden çekelim..
-      this.$appAxios.get("/user_likes/?embed=bookmark&embed=user").then(user_likes_response => {
-        this.$store.commit("setLikes", user_likes_response?.data);
-      });
-    },
     updateBookmarkList(categoryId) {
-      const url = categoryId ? `/bookmarks?embed=category&embed=user&categoryId=${categoryId}` : `/bookmarks?embed=category&_embed=user`;
+      const url = categoryId ? `/bookmarks?_embed=category&_embed=user&categoryId=${categoryId}` : `/bookmarks?_embed=category&_embed=user`
       this.$appAxios.get(url).then(bookmark_list_response => {
         this.bookmarkList = bookmark_list_response?.data || [];
       });

@@ -46,19 +46,18 @@ export default {
       //console.log(" category_response ==>", category_response );
       this.categoryList = category_response?.data || [];
     });
-   
+
     // setTimeout(() => {
-   //   console.log(this.$.title);
-   // }, 1000);
+    //   console.log(this.$.title);
+    // }, 1000);
 
+    //  ref ile elemente erişip etki edebiliriz.
+    console.dir(this.$refs.title);
 
-   //  ref ile elemente erişip etki edebiliriz.
-   console.dir(this.$refs.title);
-  
-   //  focus özelliği
-   this.$refs.title.focus();  
+    //  focus özelliği
+    this.$refs.title.focus();
   },
-  
+
   methods: {
     onSave() {
       console.log(this.userData);
@@ -71,8 +70,8 @@ export default {
 
       this.$appAxios.post("/bookmarks", saveData).then(save_bookmark_response => {
         console.log("save_bookmark_response ==>", save_bookmark_response);
-        Object.keys(this.userData)?.forEach(field => this.userData[field] = null )
-        this.$router.push({name: "HomePage"});
+        Object.keys(this.userData)?.forEach(field => (this.userData[field] = null));
+        this.$router.push({ name: "HomePage" });
       });
     }
   },

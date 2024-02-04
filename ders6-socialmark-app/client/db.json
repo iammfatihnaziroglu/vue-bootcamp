@@ -4,7 +4,17 @@
       "id": "65cc",
       "fullname": "Mehmet Fatih",
       "username": "m.fatih",
-      "password": "84fd39ce1f76687ef5d82b372c7dc11ce5cb72d7"
+      "password": "84fd39ce1f76687ef5d82b372c7dc11ce5cb72d7",
+      "likes": [
+        "1d3b",
+        "17d5",
+        "1d3b",
+        "ffb1"
+      ],
+      "bookmarks": [
+        "d29e",
+        "45a5"
+      ]
     },
     {
       "id": "df33",
@@ -17,25 +27,6 @@
       "fullname": "Nesrin Köksal",
       "username": "nesrinköksal",
       "password": "19f5dd55d51bf0a66bf170ef84e1d1d941b92278"
-    }
-  ],
-  "user_likes": [
-    {
-      "userId": "df33",
-      "bookmarkId": 1,
-      "id": "1"
-    },
-    {
-      "id": "1c69",
-      "userId": "65cc",
-      "bookmarkId": "9b65"
-    }
-  ],
-  "user_bookmarks": [
-    {
-      "userId": "67c9",
-      "bookmarkId": 6,
-      "id": "4"
     }
   ],
   "bookmarks": [

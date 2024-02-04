@@ -28,7 +28,7 @@ const routes = [
     meta: {
       componentName: "appBookmarkList"
     },
-    component: () => import("@/views/Account")
+    component: () => import("@/views/Account.vue"),
   },
   {
     name: "Likes",
@@ -36,16 +36,16 @@ const routes = [
     meta: {
       componentName: "appBookmarkList"
     },
-    component: () => import("@/views/Account")
+    component: () => import("@/views/Account.vue"),
   },
   {
     name: "Settings",
     path: "/settings",
     meta: {
-      componentName: "userSettings"
+      componentName: "appBookmarkList"
     },
-    component: () => import("@/views/Account")
-  }
+    component: () => import("@/views/Account.vue"),
+  },
 ];
 
 const router = createRouter({
@@ -55,16 +55,16 @@ const router = createRouter({
 
 router.beforeEach((to, _, next) => {
   const authRequiredRoutes = ["HomePage"];
-  const authNotRequiredRoutes = ["LoginPage", "RegisterPage"]
+  const authNotRequiredRoutes = ["LoginPage", "RegisterPage"];
   const _isAuthenticated = store.getters._isAuthenticated;
 
-    if(authNotRequiredRoutes.indexOf(to.name) > -1 && _isAuthenticated ){
-        next(false);
-    }
+  if (authNotRequiredRoutes.indexOf(to.name) > -1 && _isAuthenticated) {
+    next(false);
+  }
 
   if (authRequiredRoutes.indexOf(to.name) > -1) {
     if (_isAuthenticated) next();
-    else next({name: "LoginPage"});
+    else next({ name: "LoginPage" });
   } else {
     next();
   }
